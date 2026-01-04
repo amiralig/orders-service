@@ -1,0 +1,25 @@
+{
+  "mcpServers": {
+    "database-query": {
+      "type": "http",
+      "url": "http://localhost:8080/query",
+      "command": "java -cp \"path/to/spark-core-2.9.4.jar:path/to/sqlite-jdbc-3.42.0.0.jar:src/main/java\" com.ellisdon.demo.mcp.MCPServer",
+      "tools": [
+        {
+          "name": "query_database",
+          "description": "Execute SQL queries against the database",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "q": {
+                "type": "string",
+                "description": "SQL query to execute"
+              }
+            },
+            "required": ["q"]
+          }
+        }
+      ]
+    }
+  }
+}
